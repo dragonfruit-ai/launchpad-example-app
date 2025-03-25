@@ -30,7 +30,7 @@ const path = require('path');
 
 module.exports = {
   /** Entry point for the application during local development. */
-  entry: './src/main',
+  entry: './src/dev.tsx',
   /** Development mode enables debugging; switch to 'production' for optimized builds. */
   mode: 'development',
   /** Configuration for the Webpack development server. */
@@ -85,7 +85,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      template: './dev_index.html',
+      template: './src/dev_index.html',
     }),
   ],
 };

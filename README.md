@@ -61,13 +61,14 @@ Customize the text shown in the app by editing `AppContent.tsx`.
 
 ### 4. Deploy your App
 
-Now that you've customized the app, you can deploy it to a public URL
+Now that you've customized the app, build and deploy it to a public URL
 for integration with Dragonfruit AI's Launchpad platform.
 
 ```bash
 # (4.1) Build the app into the `./dist` directory
 yarn build
 # (4.2) Deploy the `./dist` directory to a public URL with netlify, vercel, or similar.
+#       We are specifically interested in `./dist/remote.js` which will export the `App`
 ```
 
 <details>
@@ -157,6 +158,14 @@ Module Federation setup.
     └── dragonfruit/
         ├── api.ts       # Dragonfruit Querying example
         └── context.tsx  # Dragonfruit Launchpad inferface
+```
+
+Builds after running `yarn build`
+```
+/dist
+├── index.html   # local entrypoint, can use to debug
+├── main.js      # local entrypoint
+└── remote.js    # remote component that needs to be served for launchpad
 ```
 
 ### Module Federation
