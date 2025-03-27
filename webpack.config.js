@@ -73,15 +73,17 @@ module.exports = {
   /** Plugins to extend Webpack functionality. Enable federated module loading. */
   plugins: [
     new ModuleFederationPlugin({
+      /* !!! TODO: change the name of your app to your company plus app purpose, e.g. DragonfruitVehicleManagerApp !!! */
       name: 'App',
+      /* How your app is exposed */
       filename: 'remote.js',
       exposes: {
         './App': './src/App',
       },
       /** Shared dependencies to prevent duplication in the host app. Must agree on versions. */
       shared: {
-        react: { singleton: true, eager: true },
-        'react-dom': { singleton: true, eager: true },
+        react: { singleton: true },
+        'react-dom': { singleton: true },
       },
     }),
     new HtmlWebpackPlugin({
