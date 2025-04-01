@@ -51,7 +51,7 @@ export const AppContent: React.FC = () => {
   return (
     <AppContainer>
       <Title>Your Custom App!</Title>
-      <Message>This is a federated component running on {ctx.host}, and compatible with the Dragonfruit AI Launchpad app platform.</Message>
+      <Message>This is a federated component running on {ctx.apiHost}, and compatible with the Dragonfruit AI Launchpad app platform.</Message>
     </AppContainer>
   );
 };

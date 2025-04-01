@@ -31,9 +31,9 @@ if (root) {
   createRoot(root).render(
     <React.StrictMode>
       <App
-        host={window.location.host}
-        customer_id="demo"
-        app_id={1234}
+        apiHost={window.location.host}
+        customerId="demo"
+        appId={1234}
         getAuthToken={async () => 'demo-token'}
       />
     </React.StrictMode>
