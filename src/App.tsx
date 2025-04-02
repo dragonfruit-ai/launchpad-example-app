@@ -39,3 +39,7 @@ export const App: React.FC<DfAppProps> = (props) => {
     </DfAppContextProvider>
   );
 };
+
+// very important that your app is the default export,
+// otherwise module federation won't work properly
+export default App;
