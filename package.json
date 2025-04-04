@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
+    "build-dev": "webpack --mode development",
     "check": "yarn run lint-check && yarn run type-check",
     "dev": "webpack serve",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",

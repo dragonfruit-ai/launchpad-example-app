@@ -198,9 +198,9 @@ const CustomApp = React.lazy(() => import('App/App'));
 
 // Render with required props
 <CustomApp
-  host="your-host-domain"
-  customer_id="123"
-  app_id={1}
+  apiHost="your-host-domain"
+  customerId="123"
+  appId={1}
   getAuthToken={async () => 'your-auth-token'}
 />
 ```
@@ -216,9 +216,9 @@ Documentation for importing and using remote components from our host app will b
 
 The following props are automatically provided by the host application when the component is invoked. You don't need to manually provide these values during integration:
 
-- `host`: The domain where the app is hosted
-- `customer_id`: Unique identifier for the customer
-- `app_id`: Numeric identifier for the application
+- `apiHost`: The domain where the app is hosted
+- `customerId`: Unique identifier for the customer
+- `appId`: Numeric identifier for the application
 - `getAuthToken`: Function that returns a Promise resolving to an authentication token
 
 #### API Usage Example
@@ -230,10 +230,10 @@ import { getSampleData } from './dragonfruit/api';
 import { useDfAppContext } from './dragonfruit/context';
 
 // Example usage in a component
-const { api_host, customer_id, getAuthToken, app_id } = useDfAppContext();
+const { apiHost, customerId, getAuthToken, appId } = useDfAppContext();
 
 const fetchData = async () => {
-  const data = await getSampleData(api_host, customer_id, getAuthToken, api_host);
+  const data = await getSampleData(apiHost, customerId, getAuthToken, apiHost);
   // Process the data
 };
 ```

@@ -23,7 +23,7 @@ limitations under the License.
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { App } from './App';
+import App from './App';
 
 const root = document.getElementById('root');
 
@@ -31,9 +31,9 @@ if (root) {
   createRoot(root).render(
     <React.StrictMode>
       <App
-        host={window.location.host}
-        customer_id="demo"
-        app_id={1234}
+        apiHost={window.location.host}
+        customerId="demo"
+        appId={1234}
         getAuthToken={async () => 'demo-token'}
       />
     </React.StrictMode>

@@ -17,7 +17,7 @@ limitations under the License.
 /**
  * Context provider for integrating with the host Dragonfruit AI launchpad platform.
  *
- * This file defines a React context to pass host application data (e.g., host, customer_id)
+ * This file defines a React context to pass host application data (e.g., apiHost, customerId)
  * to the federated component forming your app. A hook is provided for easy access to the data.
  *
  * NOTE: This file will most likely be provided as an official Dragonfruit AI library in the near future.
@@ -30,9 +30,9 @@ import React, { createContext, useContext } from 'react';
  * Accessible via the `useDfAppContext` hook.
  */
 interface DfAppContextType {
-  host: string;
-  customer_id: string;
-  app_id: number;
+  apiHost: string;
+  customerId: string;
+  appId: number;
   getAuthToken: () => Promise<string>;
 }
 
@@ -42,9 +42,9 @@ const DfAppContext = createContext<DfAppContextType | undefined>(undefined);
  * Props passed to your federated component by the host Dragonfruit AI Launchpad application.
  */
 export interface DfAppProps {
-  host: string;
-  customer_id: string;
-  app_id: number;
+  apiHost: string;
+  customerId: string;
+  appId: number;
   getAuthToken: () => Promise<string>;
 }
 
@@ -58,16 +58,16 @@ interface DfAppContextProviderProps extends DfAppProps {
  * Provides host launchpad application data to child components via the `useDfAppContext` context.
  */
 export const DfAppContextProvider: React.FC<DfAppContextProviderProps> = ({
-  host,
-  customer_id,
-  app_id,
+  apiHost,
+  customerId,
+  appId,
   getAuthToken,
   children,
 }) => {
   const value = {
-    host,
-    customer_id,
-    app_id,
+    apiHost,
+    customerId,
+    appId,
     getAuthToken,
   };
 
