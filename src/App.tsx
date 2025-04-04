@@ -32,7 +32,7 @@ import {DfAppContextProvider, DfAppProps, useDfAppContext} from './dragonfruit/c
  *
  * NOTE: You probably don't need to modify this. Rather edit the `AppContent` component.
  */
-export const App: React.FC<DfAppProps> = (props) => {
+const App: React.FC<DfAppProps> = (props) => {
   return (
     <DfAppContextProvider {...props}>
       <AppContent />
