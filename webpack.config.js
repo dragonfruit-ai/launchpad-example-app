@@ -82,9 +82,9 @@ module.exports = {
       },
       /** Shared dependencies to prevent duplication in the host app. Must agree on versions. */
       shared: {
-        'react': { singleton: true, requiredVersion: '^18.0.0' },
-        'react-dom': { singleton: true, requiredVersion: '^18.0.0' },
-        'styled-components': { singleton: true, requiredVersion: '^6.0.0' },
+        'react': { singleton: true, eager: true, requiredVersion: '^18.0.0' },
+        'react-dom': { singleton: true, eager: true, requiredVersion: '^18.0.0' },
+        'styled-components': { singleton: true, eager: true, requiredVersion: '^6.0.0' },
       },
     }),
     new HtmlWebpackPlugin({
